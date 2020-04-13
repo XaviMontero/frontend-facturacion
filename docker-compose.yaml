@@ -32,7 +32,7 @@ services:
     expose:
       - "80"
     volumes:
-      - rest:/usr/share/nginx/html:ro
+      - /rest:/usr/share/nginx/html:ro
     environment:
       - VIRTUAL_HOST=montecino.me,www.montecino.me
       - LETSENCRYPT_HOST=montecino.me,www.montecino.me
