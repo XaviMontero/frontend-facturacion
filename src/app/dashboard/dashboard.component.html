@@ -1,0 +1,225 @@
+ 
+ 
+ 
+
+      
+ 
+ 
+<!-- ============================================================== -->
+<!-- Simple four boxes Row -->
+<!-- ============================================================== -->
+<div fxLayout="row wrap">
+    <!-- column -->
+    <div fxFlex.gt-lg="66" fxFlex.gt-md="66" fxFlex.gt-xs="100" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <div class="d-flex flex-wrap">
+                    <div>
+                        <mat-card-title>Casos oficiales en {{fecha}}</mat-card-title>
+                        <mat-card-subtitle>Datos son oficales de la central de riesgo </mat-card-subtitle>
+                    </div>
+                    <div class="ml-auto">
+                        <ul class="list-inline">
+                            <li>
+                                <h6 class="text-success m-0"><i
+                                        class="mdi mdi-checkbox-blank-circle font-10 m-r-10 "></i>Ample</h6>
+                            </li>
+                            <li>
+                                <h6 class=" text-info m-0"><i
+                                        class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>Pixel</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Nuestros documentos  -->
+                <div class="d-flex flex-wrap">
+
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                        [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                    </canvas>
+
+
+                </div>
+            </mat-card-content>
+            <hr>
+            <mat-card-content>
+                <mat-slider thumbLabel #matslider (input)="pitch($event)" tickInterval="1" min="1"   max={{maximoFechas}} value={{maximoFechas}}>
+                </mat-slider>
+
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+    <!-- column -->
+    <!-- column -->
+    <div fxFlex.gt-lg="32" fxFlex.gt-md="32" fxFlex.gt-xs="100" fxFlex="100">
+
+        <mat-card class="oh text-center little-profile">
+            <img mat-card-image src="https://cdn.pixabay.com/photo/2012/04/10/23/23/ecuador-26986_960_720.png"
+                alt="Photo of a Shiba Inu">
+            <mat-card-content>
+
+                <h3 class="m-b-0">Caos oficales {{fechaTotales}} </h3>
+                <h6 class="m-t-0 ">De la central de riesgo </h6>
+                <mat-card-actions>
+                    <button mat-raised-button onclick="location.href='https://twitter.com/riesgos_ec?lang=es'"  color="warn">Follow</button>
+                </mat-card-actions>
+                <div fxLayout="row" fxLayoutWrap="wrap" class="m-t-30">
+                    <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
+                        <h3 class="m-0 font-light">{{recuperados}}</h3>
+                        <small>Recuperados</small>
+                    </div>
+                    <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
+                        <h3 class="m-0 font-light">{{contagios}}</h3>
+                        <small>Contagiados</small>
+                    </div>
+                    <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
+                        <h3 class="m-0 font-light">{{muertos}}</h3>
+                        <small>Muertes</small>
+                    </div>
+                </div>
+            </mat-card-content>
+
+            <hr>
+            <mat-card-content>
+                <mat-slider thumbLabel #matslider (input)="pitchPais($event)" tickInterval="1" min="1"  max={{maximoFechas}} value={{maximoFechas}}>
+                </mat-slider>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <!-- column -->
+</div>
+<div fxLayout="row wrap">
+
+    <div class="d-flex flex-wrap">
+        <div>
+            <mat-card-title>Fitra lo que gustes saber para obtener un resultado</mat-card-title>
+        </div>
+         
+    </div>
+
+    <kendo-grid [data]="gridData" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort"
+        [filter]="state.filter" [sortable]="true" [pageable]="true" [filterable]="true"
+        (dataStateChange)="dataStateChange($event)">
+        <kendo-grid-column field="id" [width]="50"></kendo-grid-column>
+        <kendo-grid-column field="canton.nombre" title="Canton" value="Cuenca" [width]="70"></kendo-grid-column>
+        <kendo-grid-column field="canton.provincia.nombre" title="Provincia"[width]="70"></kendo-grid-column>
+        <kendo-grid-column field="tiempo.fecha" title="Fecha"[width]="70"></kendo-grid-column>
+        <kendo-grid-column field="cerco" [width]="50"></kendo-grid-column>
+        <kendo-grid-column field="casoConfirmado" [width]="50"></kendo-grid-column>
+       
+    </kendo-grid>
+
+</div>
+<!-- ============================================================== -->
+
+
+
+
+ 
+
+    
+ 
+
+
+
+<div fxLayout="row wrap">
+    <!-- column -->
+    <div fxFlex.gt-lg="70" fxFlex.gt-md="70" fxFlex.gt-xs="100" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <div class="d-flex flex-wrap">
+                    <div>
+                        <mat-card-title>Casos oficiales en {{fecha}}</mat-card-title>
+                        <mat-card-subtitle>Datos son oficales de la central de riesgo </mat-card-subtitle>
+                    </div>
+                    <div class="ml-auto">
+                        <ul class="list-inline">
+                            <li>
+                                <h6 class="text-success m-0"><i
+                                        class="mdi mdi-checkbox-blank-circle font-10 m-r-10 "></i>Ample</h6>
+                            </li>
+                            <li>
+                                <h6 class=" text-info m-0"><i
+                                        class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>Pixel</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Nuestros documentos  -->
+                <div class="d-flex flex-wrap">
+
+                    <canvas baseChart width="400" height="150" [datasets]="lineChartData" [labels]="lineChartLabels"
+                        [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+                        [plugins]="lineChartPlugins" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+
+
+                </div>
+            </mat-card-content>
+            <hr>
+            <mat-card-content>
+                <mat-form-field>
+
+                    <mat-label>Escoje Una provincia</mat-label>
+                    <mat-select [(value)]="selected">
+                        <mat-option>None</mat-option>
+                            <mat-option *ngFor="let food of nombreProvinciass" [value]="food">
+                                {{food}}
+                            </mat-option>>
+                    </mat-select>
+                </mat-form-field>
+                
+                <p>Tu a Selecciona: {{selected}}</p>
+              
+                <button mat-button mat-raised-button color="primary" (click)="pushOne()">Buscar</button>
+               
+               
+
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+    <!-- ============================================================== -->
+ 
+        <!-- Card column -->
+        <div fxFlex.gt-lg="25" fxFlex.gt-md="40" fxFlex.gt-xs="100" fxFlex="100">
+            <mat-card class="oh text-center little-profile">
+                <img mat-card-image src="assets/images/background/profile-bg.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <div class="pro-img">
+                        <img src="https://avatars0.githubusercontent.com/u/24358710?s=400&u=ac2b464c99bc6d8843fa9016435f6e9d264b49c1&v=4" width="100" alt="user" class="img-circle">
+                    </div>
+                    <h3 class="m-b-0">Xavi Montero</h3>
+                    <h6 class="m-t-0 ">Web Designer &amp; Developer</h6>
+                    <mat-card-actions>
+                        <button mat-raised-button   onclick="location.href='https://github.com/XaviMontero'"  color="warn"> Follow  </button>
+                    </mat-card-actions>
+                    <div fxLayout="row" fxLayoutWrap="wrap" class="m-t-30">
+                        <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
+                            <h3 class="m-0 font-light">1099</h3>
+                            <small>Articles</small>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
+                            <h3 class="m-0 font-light">23,469</h3>
+                            <small>Followers</small>
+                        </div>
+                        <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
+                            <h3 class="m-0 font-light">6035</h3>
+                            <small>Likes</small>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+    
+        </div>
+    </div>
+
+ 
+
+
+
