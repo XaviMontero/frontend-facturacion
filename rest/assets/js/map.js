@@ -29,7 +29,7 @@ function myTest(data ){
         map.addSource('earthquakes', {
             'type': 'geojson',
             'data':
-                `http://167.172.115.71:8080/Contagios/cordenada/${data}`,
+                `https://covid-03-beta.herokuapp.com/Contagios/cordenada/${data}`,
             'cluster': true,
             'clusterRadius': 80,
             'clusterProperties': {

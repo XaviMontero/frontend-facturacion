@@ -57,7 +57,7 @@ function sol() {
         beforeMap.addSource('earthquakes', {
             'type': 'geojson',
             'data':
-                `http://167.172.115.71:8080/Contagios/cordenada/${antess}`,
+                `https://covid-03-beta.herokuapp.com/Contagios/cordenada/${antess}`,
             'cluster': true,
             'clusterRadius': 80,
             'clusterProperties': {
@@ -182,7 +182,7 @@ function sol1() {
         afterMap.addSource('earthquakes', {
             'type': 'geojson',
             'data':
-                `http://167.172.115.71:8080/Contagios/cordenada/${ahora}`,
+                `https://covid-03-beta.herokuapp.com/Contagios/cordenada/${ahora}`,
             'cluster': true,
             'clusterRadius': 80,
             'clusterProperties': {
