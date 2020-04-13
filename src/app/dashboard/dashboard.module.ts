@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { DemoMaterialModule } from '../demo-material-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardComponent } from './dashboard.component';
@@ -30,8 +30,13 @@ import { ProvinciaDTO } from '../_model/provincia_dto';
     InputsModule,
     GridModule,
  
-   
     RouterModule.forChild(DashboardRoutes)
+  ],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
   ],
   declarations: [DashboardComponent]
 })
