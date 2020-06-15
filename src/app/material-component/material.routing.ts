@@ -1,3 +1,5 @@
+import { RetencionComponent } from './retencion/retencion.component';
+import { Retencion } from './../_model/retencion';
 import { MyLineChartComponent } from './my-line-chart/my-line-chart.component';
 import { Routes } from '@angular/router';
 
@@ -17,11 +19,19 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
-
+import { FacturasComponent } from './facturas/facturas.component';
 export const MaterialRoutes: Routes = [
   {
     path: 'button',
     component: ButtonsComponent
+  },
+  {
+    path: 'facturas',
+    component: FacturasComponent
+  },
+  {
+    path: 'retenciones',
+    component: RetencionComponent
   },
   {
     path: 'grid',

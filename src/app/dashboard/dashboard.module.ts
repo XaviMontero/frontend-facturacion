@@ -16,6 +16,7 @@ import { GridModule } from '@progress/kendo-angular-grid';
 
 
 import { ProvinciaDTO } from '../_model/provincia_dto';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
@@ -29,6 +30,7 @@ import { ProvinciaDTO } from '../_model/provincia_dto';
     DropDownsModule,
     InputsModule,
     GridModule,
+    FormsModule,
  
     RouterModule.forChild(DashboardRoutes)
   ],

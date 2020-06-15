@@ -1,3 +1,4 @@
+import { RetencionComponent } from './retencion/retencion.component';
 import 'hammerjs';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -31,6 +32,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
+import { FacturasComponent } from './facturas/facturas.component';
 
 @NgModule({
   imports: [
@@ -62,7 +64,9 @@ import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
     TooltipComponent,
     SnackbarComponent,
     SliderComponent,
-    SlideToggleComponent
+    SlideToggleComponent,
+    FacturasComponent,
+    RetencionComponent
   ]
 })
 export class MaterialComponentsModule {}

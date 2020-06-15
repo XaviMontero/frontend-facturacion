@@ -1,0 +1,109 @@
+
+<div fxLayout="row wrap">
+    <!-- column -->
+    <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <div class="d-flex flex-wrap">
+                    <div>
+                        <mat-card-title>Bienvenido al sistema de Facturas electronicas </mat-card-title>
+                        <mat-card-subtitle>Usted mediante los filtros podra ver su facturas en linea para declaracion
+                        </mat-card-subtitle>
+                    </div>
+                </div>
+            </mat-card-content>
+       
+        </mat-card>
+        <mat-card>
+            <div fxFlex.gt-lg="30" fxFlex.gt-md="30" fxFlex.gt-xs="100" fxFlex="100">
+                <mat-card-content>
+                    <div class="form-group">
+                        <mat-form-field>
+
+                            <mat-label>Escoje Una Empresa</mat-label>
+                            <mat-select [(value)]="selected">
+                                <mat-option>None</mat-option>
+                                <mat-option *ngFor="let food of empresas" [value]="food">
+                                    {{food}}
+                                </mat-option>>
+                            </mat-select>
+                        </mat-form-field>
+                        <p>Tu a Selecciona: {{selected}}</p>
+                        <mat-form-field>
+                            <input  matInput placeholder="Ingrese la cedula de comprador"  
+                             required minlength="10" appForbiddenName="bob"
+                             [(ngModel)]="cedula" #cedulas="ngModel"
+                              (keyup)="_keyUp($event)"> 
+                                <mat-hint>Necesitamos su cedula para generar!</mat-hint>
+                                <mat-error *ngIf="_keyDat()">
+                                   Error el numero de cedula no corresponde 
+                                </mat-error>
+                        </mat-form-field>
+                        
+                        <mat-form-field>
+                            <mat-label>Desde el inicio (click) -> </mat-label>
+                            <input matInput [matDatepicker]="picker" data-date-format='YYYY-MM-DD' (dateInput)="addEvent('input', $event)">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker touchUi #picker></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Hasta el fin (click) -> </mat-label>
+                            <input matInput [matDatepicker]="picker1" data-date-format='YYYY-MM-DD' (dateInput)="addEventFin('input', $event)" >
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker touchUi #picker1></mat-datepicker>
+                   
+
+                        </mat-form-field>
+                        <button mat-button mat-raised-button color="primary" (click)="onClickMe()" >Buscar</button>
+                    </div>
+                </mat-card-content>
+
+            </div>
+        </mat-card>
+        <mat-card>
+                <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100" class="tabla">
+                        <mat-form-field>
+                            <input matInput (keyup)="filtrar($event.target.value)" placeholder="Buscar Alguna factura especifica">
+                        </mat-form-field>
+                    
+                        
+                        <mat-table [dataSource]="dataSource" matSort>
+                            <ng-container matColumnDef="codigo">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Codigo de autorización</mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.codigo}} </mat-cell>
+                            </ng-container>
+                        
+                            <ng-container matColumnDef="fecha">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de aprovacion </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.fecha}}</mat-cell>
+                            </ng-container>
+                        
+                            <ng-container matColumnDef="total">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.total}} </mat-cell>
+                            </ng-container>
+                        
+                            <ng-container matColumnDef="acciones">
+                                <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+                                <mat-cell *matCellDef="let row">
+                               
+                                    <button mat-button color="accent" (click)="pdf(row.id)">
+                                        <mat-icon>PDF</mat-icon>
+                                    </button>
+                                </mat-cell>
+                            </ng-container>
+                        
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: displayedColumns;">
+                        
+                            </mat-row>
+                        </mat-table>
+                        
+                        <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+
+                </div>
+        </mat-card>
+    </div>
+</div>
+<!-- column -->
