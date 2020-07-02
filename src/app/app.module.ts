@@ -25,10 +25,18 @@ import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { GridModule } from '@progress/kendo-angular-grid';
+import { JwtModule } from '@auth0/angular-jwt';
+import { environment } from '../environments/environment';
+ 
 
 
 
 
+
+export function tokenGetter() {
+  let tk = sessionStorage.getItem(environment.TOKEN_NAME);
+  return tk != null ? tk : '';
+}
 
 
 @NgModule({
@@ -49,6 +57,7 @@ import { GridModule } from '@progress/kendo-angular-grid';
     HttpClientModule,
     SharedModule,
     ChartsModule,
+   
     
  
     RouterModule.forRoot(AppRoutes),
@@ -61,7 +70,16 @@ import { GridModule } from '@progress/kendo-angular-grid';
  
     InputsModule,
  
-    GridModule
+    GridModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:8080/contadores', 'api.montecino.tech/contadores'],
+
+        blacklistedRoutes: ['http://localhost:8080/facturas', 'http://localhost:8080/retenciones',
+          'https://api.montecino.tech/facturas', 'https://api.montecino.tech/retenciones']
+      }
+    })
   ],
   providers: [
     {

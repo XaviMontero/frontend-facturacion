@@ -33,6 +33,7 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { FacturasComponent } from './facturas/facturas.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { FacturasComponent } from './facturas/facturas.component';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    CdkTableModule
+    CdkTableModule,
+    
   ],
   providers: [],
   entryComponents: [DialogOverviewExampleDialogComponent],
@@ -66,7 +68,8 @@ import { FacturasComponent } from './facturas/facturas.component';
     SliderComponent,
     SlideToggleComponent,
     FacturasComponent,
-    RetencionComponent
+    RetencionComponent,
+    LoginComponent
   ]
 })
 export class MaterialComponentsModule {}

@@ -136,7 +136,7 @@ export class RetencionComponent implements OnInit {
     }
 
     pdf(id: number, codigo: String) {
-        this.consultaService.consultaPdfFactura(id).subscribe(x => {
+        this.consultaService.consultaPdfRetencion(id).subscribe(x => {
             const url = window.URL.createObjectURL(x);
             const a = document.createElement('a');
             a.setAttribute('style', 'display:none');

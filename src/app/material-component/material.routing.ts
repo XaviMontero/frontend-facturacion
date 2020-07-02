@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { RetencionComponent } from './retencion/retencion.component';
 import { Retencion } from './../_model/retencion';
 import { MyLineChartComponent } from './my-line-chart/my-line-chart.component';
@@ -20,6 +21,8 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { FacturasComponent } from './facturas/facturas.component';
+import { GuardService } from '../_services/guard.service';
+import { Not403Component } from './not403/not403.component';
 export const MaterialRoutes: Routes = [
   {
     path: 'button',
@@ -53,10 +56,7 @@ export const MaterialRoutes: Routes = [
     path: 'stepper',
     component: StepperComponent
   },
-  {
-    path: 'expansion',
-    component: ExpansionComponent
-  },
+   
   {
     path: 'chips',
     component: ChipsComponent
@@ -75,7 +75,8 @@ export const MaterialRoutes: Routes = [
   },
   {
     path: 'dialog',
-    component: DialogComponent
+    component: DialogComponent,
+    canActivate:[GuardService]
   },
   {
     path: 'tooltip',
@@ -96,5 +97,21 @@ export const MaterialRoutes: Routes = [
   {
     path: 'my-line-chart',
     component: MyLineChartComponent
+  }
+  ,
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'not-403',
+    component: Not403Component
+  },
+   {
+     path: 'expansion',
+     component: ExpansionComponent,
+     canActivate: [GuardService]
+
+ 
   }
 ];

@@ -58,4 +58,9 @@ export class ConsultaService {
             responseType: 'blob'
         });
     }
+    consultaPdfRetencion(identificacion: number) {
+        return this.http.get(`${this.api}/retenciones/generarPdf/${identificacion}`, {
+            responseType: 'blob'
+        });
+    }
 }
