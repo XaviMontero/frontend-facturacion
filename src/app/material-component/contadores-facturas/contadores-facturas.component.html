@@ -5,8 +5,9 @@
             <mat-card-content>
                 <div class="d-flex flex-wrap">
                     <div>
-                        <mat-card-title>Bienvenido al sistema de consultas para Retenciones electronicas </mat-card-title>
-                        <mat-card-subtitle>Usted mediante los filtros podra ver su retenciones en linea 
+                        <mat-card-title>Bienvenido, al sistema de consultas para contadores de Facturas electronicas
+                        </mat-card-title>
+                        <mat-card-subtitle>usuario: {{usuario}}
                         </mat-card-subtitle>
                     </div>
                 </div>
@@ -28,14 +29,7 @@
                             </mat-select>
                         </mat-form-field>
                         <p>Tu a Selecciona: {{selected}}</p>
-                        <mat-form-field>
-                            <input matInput placeholder="Ingrese el ruc " required minlength="13"
-                                appForbiddenName="bob" [(ngModel)]="cedula" #cedulas="ngModel" (keyup)="_keyUp($event)">
-                            <mat-hint>Necesitamos su ruc para generar!</mat-hint>
-                            <mat-error *ngIf="_keyDat()">
-                                Error el numero de ruc no corresponde
-                            </mat-error>
-                        </mat-form-field>
+
 
                         <mat-form-field>
                             <mat-label>Desde el inicio (click) -> </mat-label>
@@ -63,7 +57,7 @@
             <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100" class="tabla">
                 <mat-form-field>
                     <input matInput (keyup)="filtrar($event.target.value)"
-                        placeholder="Buscar Alguna retencion especifica">
+                        placeholder="Buscar Alguna factura especifica">
                 </mat-form-field>
 
 
@@ -78,20 +72,16 @@
                         <mat-cell *matCellDef="let row"> {{row.fecha}}</mat-cell>
                     </ng-container>
 
-                    <ng-container matColumnDef="baseImponible">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header> Base Imponible </mat-header-cell>
-                        <mat-cell *matCellDef="let row"> {{row.baseImponible}} </mat-cell>
-                    </ng-container>
-                    <ng-container matColumnDef="valor">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header> Valor </mat-header-cell>
-                        <mat-cell *matCellDef="let row"> {{row.valor}} </mat-cell>
+                    <ng-container matColumnDef="total">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Total </mat-header-cell>
+                        <mat-cell *matCellDef="let row"> {{row.total}} </mat-cell>
                     </ng-container>
 
                     <ng-container matColumnDef="acciones">
                         <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
                         <mat-cell *matCellDef="let row">
 
-                            <button mat-button color="accent" (click)="pdf(row.id,row.codigo)">
+                            <button mat-button color="accent" (click)="pdf(row.id, row.codigo)">
                                 <mat-icon>PDF</mat-icon>
                             </button>
                         </mat-cell>
@@ -107,6 +97,25 @@
 
 
             </div>
+        </mat-card>
+
+        <mat-card>
+            <mat-card-content>
+                <div class="d-flex flex-wrap">
+                    <div>
+                        <mat-card-title>Total de facturas electronicas registradas: {{contador}} 
+                        </mat-card-title>
+                        <br>
+                        <mat-card-title>Sub Total de Ingresos de facutaras emitidas: {{subtotal}} $
+                        </mat-card-title>
+                        <br>
+                        <mat-card-title>Total de Ingresos de la facutaras emitidas: {{total}} $
+                        </mat-card-title>
+
+                    </div>
+                </div>
+            </mat-card-content>
+
         </mat-card>
     </div>
 </div>

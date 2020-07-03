@@ -8,14 +8,21 @@ export interface Menu {
 }
 
 const MENUITEMS = [
-  { state: 'dashboard', name: 'Facturas', type: 'link', icon: 'av_timer' },
-  { state: 'retenciones', type: 'link', name: 'Retenciones ', icon: 'crop_7_5' },
+  { state: 'dashboard', name: 'Facturas', type: 'link', icon: 'assessment' },
+  { state: 'retenciones', type: 'link', name: 'Retenciones ', icon: 'book' },
   {
-    state: 'expansion',
+    state: 'contadores-facturas',
     type: 'link',
-    name: 'Contadores',
-    icon: 'vertical_align_center'
+    name: 'Contadores Facturas',
+    icon: 'business_center'
+  } ,
+  {
+    state:'contadores-retenciones',
+    type: 'link',
+    name: 'Contadores Retenci..',
+    icon: 'business_center'
   } 
+  
 ];
 
 @Injectable()

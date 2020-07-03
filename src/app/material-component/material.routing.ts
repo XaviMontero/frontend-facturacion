@@ -1,3 +1,5 @@
+import { ContadoresRetencionesComponent } from './contadores-retenciones/contadores-retenciones.component';
+import { ContadoresFacturasComponent } from './contadores-facturas/contadores-facturas.component';
 import { LoginComponent } from './login/login.component';
 import { RetencionComponent } from './retencion/retencion.component';
 import { Retencion } from './../_model/retencion';
@@ -111,7 +113,16 @@ export const MaterialRoutes: Routes = [
      path: 'expansion',
      component: ExpansionComponent,
      canActivate: [GuardService]
-
- 
+  },
+  {
+    path: 'contadores-facturas',
+    component: ContadoresFacturasComponent,
+    canActivate: [GuardService]
+  }
+  ,
+  {
+    path: 'contadores-retenciones',
+    component: ContadoresRetencionesComponent,
+    canActivate: [GuardService]
   }
 ];

@@ -5,8 +5,9 @@
             <mat-card-content>
                 <div class="d-flex flex-wrap">
                     <div>
-                        <mat-card-title>Bienvenido al sistema de consultas para Retenciones electronicas </mat-card-title>
-                        <mat-card-subtitle>Usted mediante los filtros podra ver su retenciones en linea 
+                        <mat-card-title>Bienvenido, al sistema de consultas para contadores de Retenciones electronicas
+                        </mat-card-title>
+                        <mat-card-subtitle>usuario: {{usuario}}
                         </mat-card-subtitle>
                     </div>
                 </div>
@@ -28,14 +29,7 @@
                             </mat-select>
                         </mat-form-field>
                         <p>Tu a Selecciona: {{selected}}</p>
-                        <mat-form-field>
-                            <input matInput placeholder="Ingrese el ruc " required minlength="13"
-                                appForbiddenName="bob" [(ngModel)]="cedula" #cedulas="ngModel" (keyup)="_keyUp($event)">
-                            <mat-hint>Necesitamos su ruc para generar!</mat-hint>
-                            <mat-error *ngIf="_keyDat()">
-                                Error el numero de ruc no corresponde
-                            </mat-error>
-                        </mat-form-field>
+          
 
                         <mat-form-field>
                             <mat-label>Desde el inicio (click) -> </mat-label>
@@ -107,6 +101,23 @@
 
 
             </div>
+        </mat-card>
+
+        <mat-card>
+            <mat-card-content>
+                <div class="d-flex flex-wrap">
+                    <div>
+                        <mat-card-title>Total de retenciones electronicas registradas: {{contador}}
+                        </mat-card-title>
+                   
+                        <br>
+                        <mat-card-title>Valor de Ingresos de la retenciones emitidas: {{total}} $
+                        </mat-card-title>
+        
+                    </div>
+                </div>
+            </mat-card-content>
+        
         </mat-card>
     </div>
 </div>

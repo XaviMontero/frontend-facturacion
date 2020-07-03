@@ -32,10 +32,8 @@ export class GuardService implements CanActivate {
             let token = sessionStorage.getItem(environment.TOKEN_NAME);
             if (!helper.isTokenExpired(token)) {
                 //SI TIENES EL ROL NECESARIO
-
                 let url = state.url;
                 const decodedToken = helper.decodeToken(token);
-
                 return true;
             } else {
                 this.loginService.cerrarSesion();

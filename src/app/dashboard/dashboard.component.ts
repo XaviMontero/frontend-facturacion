@@ -39,15 +39,15 @@ export class DashboardComponent implements OnInit {
 		this.consultaService.consultaEmpresa().subscribe(data => {
 
 			this.getList = data.map(x => x);
-			this.empresas = data.map(x => x.nombre);
+			this.empresas = data.map(x => x.nombreLocal);
 			console.log(this.getList)
 		});
 	}
 
-	getRuc(nombre: String) {
+	getRuc(nombreLocal: String) {
 		var axu = 'do';
 		this.getList.map((x) => {
-			if (x.nombre == nombre) {
+			if (x.nombreLocal == nombreLocal) {
 				axu = x.ruc;
 			}
 		});

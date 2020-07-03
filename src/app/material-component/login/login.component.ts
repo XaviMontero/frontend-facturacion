@@ -35,9 +35,9 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem(environment.TOKEN_NAME, data.access_token);
 
       let decodedToken = helper.decodeToken(data.access_token);
-      console.log(decodedToken);
+      console.log(decodedToken.user_name);
 
-      this.router.navigate(['dialog']);
+      this.router.navigate(['contadores-facturas']);
     });
   }
 

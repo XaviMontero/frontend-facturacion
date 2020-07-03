@@ -34,6 +34,8 @@ import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { FacturasComponent } from './facturas/facturas.component';
 import { LoginComponent } from './login/login.component';
+import { ContadoresFacturasComponent } from './contadores-facturas/contadores-facturas.component';
+import { ContadoresRetencionesComponent } from './contadores-retenciones/contadores-retenciones.component';
 
 @NgModule({
   imports: [
@@ -69,7 +71,9 @@ import { LoginComponent } from './login/login.component';
     SlideToggleComponent,
     FacturasComponent,
     RetencionComponent,
-    LoginComponent
+    LoginComponent,
+    ContadoresFacturasComponent,
+    ContadoresRetencionesComponent
   ]
 })
 export class MaterialComponentsModule {}

@@ -74,7 +74,7 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:8080/contadores', 'api.montecino.tech/contadores'],
+        whitelistedDomains: ['localhost:8080', 'api.montecino.tech'],
 
         blacklistedRoutes: ['http://localhost:8080/facturas', 'http://localhost:8080/retenciones',
           'https://api.montecino.tech/facturas', 'https://api.montecino.tech/retenciones']

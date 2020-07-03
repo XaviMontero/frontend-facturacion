@@ -3,4 +3,7 @@
 export interface Empresa {
     ruc:    string;
     nombre: string;
+    nombreLocal: string; 
+    direccion: string;
+
 }
