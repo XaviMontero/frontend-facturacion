@@ -7,12 +7,8 @@ export const environment = {
   production: false,
   HOST: 'https://covid-03-beta.herokuapp.com',
   mapbox: 'pk.eyJ1IjoieGF2aW5vb2IiLCJhIjoiY2s0Mzh4bXZuMDN1NzNpcnJndXVzOXV2MiJ9.IQ7TZdyB6OnCy-8m7mqVhQ',
-<<<<<<< HEAD
-  API: 'https://api.montecino.tech',
-=======
  
   API: 'https://api.montecino.tech',
->>>>>>> 9f0d651774a057dca5c7488eb2ee4ed3e2a9ed71
   TOKEN_AUTH_USERNAME: 'mitomediapp',
   TOKEN_AUTH_PASSWORD: 'mito89codex',
   TOKEN_NAME: 'access_token'
