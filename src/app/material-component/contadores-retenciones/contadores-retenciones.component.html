@@ -66,7 +66,10 @@
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Codigo de autorización</mat-header-cell>
                         <mat-cell *matCellDef="let row"> {{row.codigo}} </mat-cell>
                     </ng-container>
-
+                    <ng-container matColumnDef="cliente">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Empresa </mat-header-cell>
+                        <mat-cell *matCellDef="let row"> {{row.rucProvedor}}</mat-cell>
+                    </ng-container>
                     <ng-container matColumnDef="fecha">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de aprovacion </mat-header-cell>
                         <mat-cell *matCellDef="let row"> {{row.fecha}}</mat-cell>

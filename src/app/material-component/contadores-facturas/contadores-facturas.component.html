@@ -61,17 +61,24 @@
                 </mat-form-field>
 
 
-                <mat-table [dataSource]="dataSource" matSort>
+                <mat-table [dataSource]="dataSource" matSort > 
                     <ng-container matColumnDef="codigo">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header> Codigo de autorización</mat-header-cell>
-                        <mat-cell *matCellDef="let row"> {{row.codigo}} </mat-cell>
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="fila1"> Codigo de autorización</mat-header-cell>
+                        <mat-cell  *matCellDef="let row"> {{row.codigo}} </mat-cell>
                     </ng-container>
-
+                    <ng-container matColumnDef="cliente">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Cliente</mat-header-cell>
+                        <mat-cell *matCellDef="let row"> {{row.identificacion}}</mat-cell>
+                    </ng-container>
                     <ng-container matColumnDef="fecha">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de aprovacion </mat-header-cell>
                         <mat-cell *matCellDef="let row"> {{row.fecha}}</mat-cell>
                     </ng-container>
 
+                    <ng-container matColumnDef="subTotal">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> SubTotal </mat-header-cell>
+                        <mat-cell *matCellDef="let row"> {{row.subTotal}} </mat-cell>
+                    </ng-container>
                     <ng-container matColumnDef="total">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Total </mat-header-cell>
                         <mat-cell *matCellDef="let row"> {{row.total}} </mat-cell>
