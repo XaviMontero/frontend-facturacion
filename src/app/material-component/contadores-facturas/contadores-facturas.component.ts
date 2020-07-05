@@ -25,7 +25,7 @@ export class ContadoresFacturasComponent implements OnInit {
   public subtotal: Number = 0.0;
   selected = 'Empresa';
   dataSource: MatTableDataSource<Factura>;
-  displayedColumns = ['codigo', 'fecha', 'total', 'acciones'];
+  displayedColumns = ['codigo','cliente','fecha','subTotal', 'total', 'acciones'];
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 

@@ -26,7 +26,7 @@ export class ContadoresRetencionesComponent implements OnInit {
   public subtotal: Number = 0.0;
   selected = 'Empresa';
   dataSource: MatTableDataSource<Retencion>;
-  displayedColumns = ['codigo', 'fecha', 'baseImponible', 'valor', 'acciones'];
+  displayedColumns = ['codigo','cliente', 'fecha', 'baseImponible', 'valor', 'acciones'];
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
