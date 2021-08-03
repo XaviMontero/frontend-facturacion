@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
     public getList: Catastro[] = null;
     public isData = false;
     public nombresCompletos : string = '';
+    public observacion : string = '';
 	@ViewChild(MatSort, { static: true }) sort: MatSort;
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
@@ -63,6 +64,7 @@ export class DashboardComponent implements OnInit {
           if (data.cedula.endsWith(this.clave)){
             console.log(data);
             this.nombresCompletos = data.nombre +' '+ data.apellido;
+            this.observacion = data.observacion;
             this.isData = true;
           }
         });

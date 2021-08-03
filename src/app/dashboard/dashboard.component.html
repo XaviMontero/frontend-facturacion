@@ -17,8 +17,6 @@
             <div fxFlex.gt-lg="30" fxFlex.gt-md="30" fxFlex.gt-xs="100" fxFlex="100">
                 <mat-card-content>
                     <div class="form-group">
-
-
                         <mat-form-field>
                             <input matInput placeholder="Ingrese la cedula o clave catastral" required minlength="30"
                                 appForbiddenName="bob" [(ngModel)]="clave" #cedulas="ngModel" (keyup)="_keyUp($event)">
@@ -38,17 +36,36 @@
 
 
         <mat-card *ngIf="isData">
-          <div fxFlex.gt-lg="30" fxFlex.gt-md="30" fxFlex.gt-xs="100" fxFlex="100">
+          <div fxFlex.gt-lg="100" fxFlex.gt-md="70" fxFlex.gt-xs="100" fxFlex="100" fxFlex.sm="50" fxFlex.gt-lg="50">
+          <mat-card-header style="text-align: center;">
+
+            <mat-card-title>Nombre del usuario</mat-card-title>
+            <mat-card-subtitle> Registrado en el centro de catastros</mat-card-subtitle>
+          </mat-card-header>
+
               <mat-card-content>
-                 <div fxFlex.gt-lg="30" fxFlex.gt-md="30"> <img src="https://img.icons8.com/office/40/000000/user.png"/> </div>
-                 <div fxFlex.gt-lg="60" fxFlex.gt-md="60">
+                 <div fxFlex.gt-lg="20" fxFlex.gt-md="30"> <img src="https://img.icons8.com/office/40/000000/user.png"/> </div>
+                 <div style="margin-top: 15px; margin-left: 10px;" fxFlex.gt-lg="60" fxFlex.gt-md="60">
                   <h6>{{nombresCompletos}}</h6>
                 </div>
               </mat-card-content>
-
           </div>
       </mat-card>
 
+      <mat-card  *ngIf="isData && observacion != 'null'" >
+        <div fxFlex.gt-lg="100" fxFlex.gt-md="70" fxFlex.gt-xs="100" fxFlex="100" fxFlex.sm="50" fxFlex.gt-lg="50">
+          <mat-card-header style="text-align: center;">
+            <mat-card-title>Observaciones encontradas </mat-card-title>
+            <mat-card-subtitle>El usuario presenta los siguientes problemas</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+             <div fxFlex.gt-lg="20" fxFlex.gt-md="30" fxFlex.gt-xs="30" fxFlex="30"><img src="https://img.icons8.com/color/48/000000/stargaze.png"/></div>
+             <div style="margin-top: 15px; " fxFlex.gt-lg="70" fxFlex.gt-md="70" fxFlex.gt-xs="70" fxFlex="70">
+              <h6>{{observacion}}</h6>
+            </div>
+          </mat-card-content>
+      </div>
+      </mat-card>
     </div>
 </div>
 
