@@ -1,4 +1,4 @@
- 
+
  mat-slider {
   width: 100%;
 }
@@ -28,5 +28,5 @@
   background-color: white;
 }
  /* You can add global styles to this file, and also import other style files */
- 
- 
+ body { margin: 0; padding: 0; }
+#mapBox { position: absolute; top: 0; bottom: 0; width: 100%; }

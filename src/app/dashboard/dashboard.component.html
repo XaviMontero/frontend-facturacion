@@ -66,6 +66,45 @@
           </mat-card-content>
       </div>
       </mat-card>
+
+
+      <mat-card *ngIf="isData">
+        <div fxFlex.gt-lg="100" fxFlex.gt-md="70" fxFlex.gt-xs="100" fxFlex="100" fxFlex.sm="50" fxFlex.gt-lg="50">
+        <mat-card-header style="text-align: center;">
+
+          <mat-card-title>Pagos que tiene que realizar</mat-card-title>
+          <mat-card-subtitle>Los impuestos son los siguietes</mat-card-subtitle>
+        </mat-card-header>
+
+            <mat-card-content>
+               <div fxFlex.gt-lg="20" fxFlex.gt-md="20" fxFlex.gt-xs="20" fxFlex="20" fxFlex.sm="20" fxFlex.gt-lg="50"> <img src="https://img.icons8.com/color/48/000000/tax.png"/> </div>
+               <div style="margin-top: 15px; margin-left: 10px;" fxFlex.gt-lg="60" fxFlex.gt-md="60" fxFlex.gt-xs="60" fxFlex="60" fxFlex.sm="60" fxFlex.gt-lg="60">
+                <label> <b>Impuesto</b></label>
+                <h6>{{impuesto}}</h6>
+              </div>
+
+              <div fxFlex.gt-lg="20" fxFlex.gt-md="20" fxFlex.gt-xs="20" fxFlex="20" fxFlex.sm="20" fxFlex.gt-lg="50"> <img src="https://img.icons8.com/color/48/000000/fire-truck.png"/> </div>
+              <div style="margin-top: 15px; margin-left: 10px;" fxFlex.gt-lg="60" fxFlex.gt-md="60" fxFlex.gt-xs="60" fxFlex="60" fxFlex.sm="60" fxFlex.gt-lg="60">
+               <label> <b>Bomberos</b></label>
+               <h6>{{bomberos}}</h6>
+             </div>
+            </mat-card-content>
+
+            <mat-card-actions style="justify-content: center; align-items: center; margin: 30px;">
+              <div fxFlex.gt-lg="20" fxFlex.gt-md="20" fxFlex.gt-xs="20" fxFlex="20" fxFlex.sm="20" fxFlex.gt-lg="50"> <img src="https://img.icons8.com/office/40/000000/mobile-payment.png"/></div>
+              <div style="margin-top: 15px; margin-left: 10px;" fxFlex.gt-lg="60" fxFlex.gt-md="60" fxFlex.gt-xs="60" fxFlex="60" fxFlex.sm="60" fxFlex.gt-lg="60">
+               <label> <b>Total</b></label>
+               <h6>{{total}}</h6>
+             </div>
+            </mat-card-actions>
+        </div>
+    </mat-card>
+
+    <mat-card style="margin: 0%; padding: 0%;" >
+      <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+        <div id='mapBox' > </div>
+       </div>
+    </mat-card>
     </div>
 </div>
 
