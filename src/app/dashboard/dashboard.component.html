@@ -18,7 +18,7 @@
                 <mat-card-content>
                     <div class="form-group">
                         <mat-form-field>
-                            <input matInput placeholder="Ingrese la cedula o clave catastral" required minlength="30"
+                            <input matInput placeholder="Ingrese la cedula o clave catastral" required minlength="9"
                                 appForbiddenName="bob" [(ngModel)]="clave" #cedulas="ngModel" (keyup)="_keyUp($event)">
                             <mat-hint>Necesitamos su la cedula o clave catastral para generar!</mat-hint>
                             <mat-error *ngIf="_keyDat()">
@@ -76,33 +76,37 @@
           <mat-card-subtitle>Los impuestos son los siguietes</mat-card-subtitle>
         </mat-card-header>
 
-            <mat-card-content>
-               <div fxFlex.gt-lg="20" fxFlex.gt-md="20" fxFlex.gt-xs="20" fxFlex="20" fxFlex.sm="20" fxFlex.gt-lg="50"> <img src="https://img.icons8.com/color/48/000000/tax.png"/> </div>
-               <div style="margin-top: 15px; margin-left: 10px;" fxFlex.gt-lg="60" fxFlex.gt-md="60" fxFlex.gt-xs="60" fxFlex="60" fxFlex.sm="60" fxFlex.gt-lg="60">
-                <label> <b>Impuesto</b></label>
-                <h6>{{impuesto}}</h6>
+            <mat-card-content class="container" >
+              <div class="container-tax">
+                <img src="https://img.icons8.com/color/48/000000/tax.png" />
+                 <div class="container-tax-description">
+                   <label> <b>Impuesto</b></label>
+                   <h6>{{impuesto}}</h6>
+                 </div>
               </div>
 
-              <div fxFlex.gt-lg="20" fxFlex.gt-md="20" fxFlex.gt-xs="20" fxFlex="20" fxFlex.sm="20" fxFlex.gt-lg="50"> <img src="https://img.icons8.com/color/48/000000/fire-truck.png"/> </div>
-              <div style="margin-top: 15px; margin-left: 10px;" fxFlex.gt-lg="60" fxFlex.gt-md="60" fxFlex.gt-xs="60" fxFlex="60" fxFlex.sm="60" fxFlex.gt-lg="60">
-               <label> <b>Bomberos</b></label>
-               <h6>{{bomberos}}</h6>
-             </div>
+              <div class="container-tax">
+                <img src="https://img.icons8.com/color/48/000000/fire-truck.png" />
+                <div class="container-tax-description">
+                  <label> <b>Bomberos</b></label>
+                  <h6>{{bomberos}}</h6>
+                </div>
+              </div>
+              <br>
+              <div class="container-tax">
+                <img src="https://img.icons8.com/office/40/000000/mobile-payment.png" />
+                <div class="container-tax-description">
+                  <label> <b>Total</b></label>
+                  <h6>{{total}}</h6>
+                </div>
+              </div>
             </mat-card-content>
-
-            <mat-card-actions style="justify-content: center; align-items: center; margin: 30px;">
-              <div fxFlex.gt-lg="20" fxFlex.gt-md="20" fxFlex.gt-xs="20" fxFlex="20" fxFlex.sm="20" fxFlex.gt-lg="50"> <img src="https://img.icons8.com/office/40/000000/mobile-payment.png"/></div>
-              <div style="margin-top: 15px; margin-left: 10px;" fxFlex.gt-lg="60" fxFlex.gt-md="60" fxFlex.gt-xs="60" fxFlex="60" fxFlex.sm="60" fxFlex.gt-lg="60">
-               <label> <b>Total</b></label>
-               <h6>{{total}}</h6>
-             </div>
-            </mat-card-actions>
         </div>
     </mat-card>
 
     <mat-card style="margin: 0%; padding: 0%;" >
-      <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
-        <div id='mapBox' > </div>
+      <div  fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+        <div id='mapBox'></div>
        </div>
     </mat-card>
     </div>

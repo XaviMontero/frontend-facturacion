@@ -17,3 +17,16 @@
   height: 300px;
  background-color: rebeccapurple;
 }
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-tax{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap:1rem
+}

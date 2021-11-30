@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  HOST: 'https://api.ccpidsuscal.com',
+  HOST: 'https://api.kpyvara.xyz',
   MAPBOX: 'pk.eyJ1IjoieGF2aW5vb2IiLCJhIjoiY2s0Mzh4bXZuMDN1NzNpcnJndXVzOXV2MiJ9.IQ7TZdyB6OnCy-8m7mqVhQ',
   API: 'https://api.montecino.tech',
   TOKEN_AUTH_USERNAME: 'mitomediapp',
